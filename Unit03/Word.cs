@@ -2,12 +2,18 @@ using System.Collections.Generic;
 
 namespace Unit03
 {
+    /// <summary>
+    ///<para> Keeps track of what word is trying to be guessed and the corresponding hint </para>
+    /// </summary>
     class Word
     {
         int _length;
         string _word;
         public List<char> _hint = new List<char>();
 
+        /// <summary>
+        /// determines word and gets length
+        /// </word>
         public Word()
         {
             _word = "happy";
@@ -17,12 +23,18 @@ namespace Unit03
                 _hint.Add('_');
         }
 
+        /// <summary>
+        /// Prints hint
+        /// </summary>
         public string PrintHint()
         {
             string hintString = string.Join(" ", _hint);
             return hintString;
         }
 
+        /// <summary>
+        /// Checks to see if users guess is in word
+        /// </summary>
         public bool CheckLetter(char guess)
         {
             int indexValue = 0;

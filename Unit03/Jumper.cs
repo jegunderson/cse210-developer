@@ -3,6 +3,8 @@ using System;
 
 namespace Unit03
 {
+    /// <summary>
+    /// <para> Keeps track of jumper graphic </para>
     class Jumper
     {
         public List<string> _jumperpic = new List<string>();
@@ -21,6 +23,9 @@ namespace Unit03
 
         }
 
+        /// <summary>
+        /// Print jumper graphic
+        /// </summary>
         public string PrintJumper()
         {
             return String.Join('\n', _jumperpic);
@@ -30,6 +35,9 @@ namespace Unit03
             // }
         }
 
+        /// <summary>
+        /// Breaks parachute
+        /// </summary>
         public void BreakParachute()
         {
             // break pic one item at a time

@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace Unit03
 {
+    /// <summary>
+    /// <para>A person who directs the game.</para>
+    /// <para>
+    /// The responsibility of a Director is to control the sequence of play.
+    /// </para>
+    /// </summary>
     class Director
     {
         private Word w1 = new Word();
@@ -11,12 +17,18 @@ namespace Unit03
 
         private TerminalService terminalservice = new TerminalService();
 
+        /// <summary>
+        /// Constructs a new instance of Director.
+        /// </summary>
         public Director()
         {
             terminalservice.WriteText(jumper.PrintJumper());
             terminalservice.WriteText(w1.PrintHint());
         }
 
+            /// <summary>
+            /// Starts the game by running the main game loop.
+            /// </summary>
             public void StartGame()
             {
                 while (_isPlaying)
@@ -26,11 +38,19 @@ namespace Unit03
                     DoOutput();
                 }
             }
+            /// <summary>
+            /// Gets guess
+            /// </summary>
             private char GetInput()
             {
                 char guess = terminalservice.ReadChar("What is your guess? ");
                 return guess;
             }
+
+            /// <summary>
+            /// Checks if letter is correct and updates jumper
+            /// </summary>
+
             private void DoUpdate(char guess)
             {
                 bool CorrectGuess = w1.CheckLetter(guess);
@@ -53,6 +73,9 @@ namespace Unit03
                 }
             }
 
+            /// <summary>
+            /// Prints jumper and hint
+            /// </summary>
             private void DoOutput()
             {
                 terminalservice.WriteText("");
